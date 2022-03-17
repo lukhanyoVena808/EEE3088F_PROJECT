@@ -1,0 +1,18 @@
+.MTP125-1105S1 :1 ;Pin Header & Female Header Through Hole,P=2.54mm RoHS
+HDRV5W64P0X254_1X5_1270X250X885P
+*STM J
+*NGS
+*PLB 1="1" 2="2" 3="3" 4="4" 5="5"
+*MXP 5
+*DFN MTP125-1105S1
+~!Manufacturer_Name (MINTRON)
+~!Manufacturer_Part_Number (MTP125-1105S1)
+~!Mouser Part Number (-)
+~!Mouser Price/Stock (-)
+~!Arrow Part Number (-)
+~!Arrow Price/Stock (-)
+~!Link Datasheet (https://datasheet.lcsc.com/szlcsc/1901241805_MINTRON-MTP125-1105S1_C358687.pdf)
+~!Height (8.85mm)
+~!3D_Model (MTP125-1105S1)
+MTP125-1105S1
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 
