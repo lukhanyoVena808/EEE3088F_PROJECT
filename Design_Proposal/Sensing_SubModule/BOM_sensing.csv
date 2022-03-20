@@ -14,8 +14,6 @@ Item,Qty,Reference(s),Value,LibPart,Footprint,Datasheet,,,,
 ,1,R7,GL5516,Sensor_Optical:LDR03,RES-TH_L5.1-W4.3-P3.40-D0.5,https://datasheet.lcsc.com/lcsc/1809042020_Senba-Sensing-Tech-GL5516_C125626.pdf,,,,
 ,1,R8,10K,Device:R,R0603,https://datasheet.lcsc.com/lcsc/1811081617_YAGEO-RC0603JR-0710KL_C99198.pdf ,,,,
 ,1,U1,TMP102AIDRLR,Sensor_Temperature:TMP1075D,SOT-563_L1.6-W1.2-P0.50-LS1.6-BR,https://datasheet.lcsc.com/lcsc/1810161612_Texas-Instruments-TMP102AIDRLR_C99269.pdf,,,,
-,1,U2,Header-Male-2.54_1x3,Male_Pin_Header_3P:Header-Male-2.54_1x3,HDR-TH_3P-P2.54-V-M-1,https://datasheet.lcsc.com/lcsc/1811132313_BOOMELE-Boom-Precision-Elec-C49257_C49257.pdf,,,,
-,1,U3,210S-1*5P_L=11.6MMGold-plated_black,Male_Pin_Header_3P:210S-1*5P_L=11.6MMGold-plated_black,HDR-TH_5P-P2.54-V-M,https://datasheet.lcsc.com/lcsc/1810241611_Ckmtw-Shenzhen-Cankemeng-B-2100S05P-A110_C124379.pdf ,,,,
 ,,,,,,,,,,
 ,,,,,,,,,,
 ,,,,,,,,,,
@@ -27,6 +25,4 @@ Item,Qty,Reference(s),Value,LibPart,Footprint,Datasheet,Manufacturer,Supplier,Su
 3,1,R7,GL5516,Sensor_Optical:LDR03,RES-TH_L5.1-W4.3-P3.40-D0.5,https://datasheet.lcsc.com/lcsc/1809042020_Senba-Sensing-Tech-GL5516_C125626.pdf,Senba,LCSC,C125626,0.048
 4,1,R8,10K,Device:R,R0603,https://datasheet.lcsc.com/lcsc/1811081617_YAGEO-RC0603JR-0710KL_C99198.pdf ,YAGEO,LCSC,C99198,0.001
 5,1,U1,TMP102AIDRLR,Sensor_Temperature:TMP1075D,SOT-563_L1.6-W1.2-P0.50-LS1.6-BR,https://datasheet.lcsc.com/lcsc/1810161612_Texas-Instruments-TMP102AIDRLR_C99269.pdf,Texas Instruments,LCSC,C99269,0.879
-7,1,U2,Header-Male-2.54_1x3,Male_Pin_Header_3P:Header-Male-2.54_1x3,HDR-TH_3P-P2.54-V-M-1,https://datasheet.lcsc.com/lcsc/1811132313_BOOMELE-Boom-Precision-Elec-C49257_C49257.pdf,BOOMELE,LCSC,C49257,0.014
-8,1,U3,210S-1*5P_L=11.6MMGold-plated_black,Male_Pin_Header_3P:210S-1*5P_L=11.6MMGold-plated_black,HDR-TH_5P-P2.54-V-M,https://datasheet.lcsc.com/lcsc/1810241611_Ckmtw-Shenzhen-Cankemeng-B-2100S05P-A110_C124379.pdf ,Ckmtw,LCSC,C124379,0.045
-,,,,,,,,,Total: ,1.15
+,,,,,,,,,Total: ,1.091
