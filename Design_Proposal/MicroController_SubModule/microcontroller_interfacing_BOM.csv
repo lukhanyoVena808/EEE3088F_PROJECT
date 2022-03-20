@@ -1,0 +1,41 @@
+Column1;Column2;Column3;Column4;Column5;Column6;Column7;Column8;Column11;Column12;Column13;Column14
+Source:;C:\Users\User\Documents\3rd year\EEE3088F\EEE3088F_PROJECT\Design_Proposal\MicroController_SubModule\microcontroller_interfacing.kicad_sch;;;;;;;;;;
+Date:;2022/03/20 19:06:47;;;;;;;;;;
+Tool:;Eeschema (6.0.2);;;;;;;;;;
+Generator:;C:\Program Files\KiCad\6.0\bin\scripting\plugins/bom_csv_grouped_by_value.py;;;;;;;;;;
+Component Count:;14;;;;;;;;;;
+;;;;;;;;;;;
+Individual Components:;;;;;;;;;;;
+;;;;;;;;;;;
+Item;Qty;Reference(s);Value;LibPart;Footprint;Datasheet;MANUFACTURER;Supplier;Manufacturer_Part_Number;Supplier Part;Price($)
+;;C2;10nF;Device:C;CAP_10NF:CAPC1005X55N;~;SAMSUNG;LCSC;CL10B103KB8NNNC;C1589;0.003
+;;C7;100nF;Device:C;100NF_C:CAPC1005X55N;~;SAMSUNG;LCSC;CL10B104KA8NNNC;C1590;0.002
+;;C8;22uF;Device:C;22UF_C:ANTC1608X90N;~;SAMSUNG;LCSC;CL10B103KB8NNNC;C86295;0.015
+;;C9;100nF;Device:C;100NF_C:CAPC1005X55N;~;SAMSUNG;LCSC;CL10B104KA8NNNC;C1590;0.002
+;;D4;GREEN;Device:LED;LED_:LEDC1005X55N;~;EVERLIGHT;LCSC;16-213/BHC-AN1P2/3T;C131223;0.05
+;;D5;RED;Device:LED;LED_:LEDC1005X55N;~;EVERLIGHT;LCSC;16-213/SDRC/S530-A3/TR8;C71911;0.049
+;;R11;1K;Device:R;1K_R:RESC1005X40N;~;UniOhm;LCSC;0402WGF1001TCE;C11702;0.001
+;;R12;1K;Device:R;1K_R:RESC1005X40N;~;UniOhm;LCSC;0402WGF1001TCE;C11702;0.001
+;;TP1;TestPoint;Connector:TestPoint;TestPoint:TestPoint_Pad_1.0x1.0mm;~;;LCSC;;;
+;;TP3;TestPoint;Connector:TestPoint;TestPoint:TestPoint_Pad_1.0x1.0mm;~;;LCSC;;;
+;;TP8;RXD;Connector:TestPoint;TestPoint:TestPoint_Pad_1.0x1.0mm;~;;LCSC;;;
+;;TP9;TXD;Connector:TestPoint;TestPoint:TestPoint_Pad_1.0x1.0mm;~;;LCSC;;;
+;;U3;FT232RL-REEL;ft23:FT232RL-REEL;FT23:SOP65P780X200-28N;;Future Technology Devices International Ltd;LCSC;FT232RL-REEL;C8690;6.275
+;;U4;M24C16-RMN6TP;M24C16-RMN6TP:M24C16-RMN6TP;M24:SOIC127P600X175-8N;;STMicroelectronics;LCSC;M24C16-RMN6TP;C79946;0.253
+;;;;;;;;;;TOTAL;6.651
+;;;;;;;;;;;
+;;;;;;;;;;;
+Collated Components:;;;;;;;;;;;
+;;;;;;;;;;;
+Item;Qty;Reference(s);Value;LibPart;Footprint;Datasheet;MANUFACTURER;Supplier;Manufacturer_Part_Number;Supplier Part;Price($)
+1;1;C2;10nF;Device:C;CAP_10NF:CAPC1005X55N;~;SAMSUNG;LCSC;CL10B103KB8NNNC;C1589;0.003
+2;2;C7, C9;100nF;Device:C;100NF_C:CAPC1005X55N;~;SAMSUNG;LCSC;CL10B104KA8NNNC;C1590;0.002
+3;1;C8;22uF;Device:C;22UF_C:ANTC1608X90N;~;SAMSUNG;LCSC;CL10B103KB8NNNC;C86295;0.015
+4;1;D4;GREEN;Device:LED;LED_:LEDC1005X55N;~;EVERLIGHT;LCSC;16-213/BHC-AN1P2/3T;C131223;0.05
+5;1;D5;RED;Device:LED;LED_:LEDC1005X55N;~;EVERLIGHT;LCSC;16-213/SDRC/S530-A3/TR8;C71911;0.049
+6;2;R11, R12;1K;Device:R;1K_R:RESC1005X40N;~;UniOhm;LCSC;0402WGF1001TCE;C11702;0.001
+7;2;TP1, TP3;TestPoint;Connector:TestPoint;TestPoint:TestPoint_Pad_1.0x1.0mm;~;;LCSC;;;
+8;1;TP8;RXD;Connector:TestPoint;TestPoint:TestPoint_Pad_1.0x1.0mm;~;;LCSC;;;
+9;1;TP9;TXD;Connector:TestPoint;TestPoint:TestPoint_Pad_1.0x1.0mm;~;;LCSC;;;
+10;1;U3;FT232RL-REEL;ft23:FT232RL-REEL;FT23:SOP65P780X200-28N;;Future Technology Devices International Ltd;LCSC;FT232RL-REEL;C8690;6.275
+11;1;U4;M24C16-RMN6TP;M24C16-RMN6TP:M24C16-RMN6TP;M24:SOIC127P600X175-8N;;STMicroelectronics;LCSC;M24C16-RMN6TP;C79946;0.253
