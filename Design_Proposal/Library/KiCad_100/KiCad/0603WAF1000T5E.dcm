@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 0603WAF1000T5E
+D Professional Thin Film Chip Resistor
+K
+F https://www.vishay.com/docs/28705/mcx0x0xpro.pdf
+$ENDCMP
+#
+#End Doc Library

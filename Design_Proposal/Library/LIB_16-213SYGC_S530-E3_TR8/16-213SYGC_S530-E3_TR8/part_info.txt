@@ -1,0 +1,9 @@
+Manufacturer=Everlight
+PartNumber=16-213SYGC/S530-E3/TR8
+PartCategory=LED
+PackageCategory=LEDs Chip
+PinCount=2
+Version=1.1
+Released=2020-10-05 16:40:48
+Downloaded=2022-03-17 22:34:24
+3D=N

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP CL10A106MA8NRNC
+D Cap Ceramic 10uF 25V X5R 20% SMD 0603 85C T/R
+K
+F https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/CL10A106MA8NRNC_Spec.pdf
+$ENDCMP
+#
+#End Doc Library

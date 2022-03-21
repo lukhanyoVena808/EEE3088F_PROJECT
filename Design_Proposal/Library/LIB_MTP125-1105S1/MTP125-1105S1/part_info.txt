@@ -1,0 +1,9 @@
+Manufacturer=MINTRON
+PartNumber=MTP125-1105S1
+PartCategory=Connector
+PackageCategory=Header, Vertical
+PinCount=5
+Version=1.1
+Released=2019-12-09 06:43:24
+Downloaded=2022-03-09 02:07:26
+3D=Y

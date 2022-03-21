@@ -1,0 +1,17 @@
+.16-213SYGC_S530-E3_TR8 :1 ;LED Uni-Color Brilliant Yellow Green 575nm 2-Pin Chip 0402(1006Metric) T/R
+LEDC1005X55N
+*STM LED
+*NGS
+*PLB 1="K" 2="A"
+*MXP 2
+*DFN 16-213SYGC_S530-E3_TR8
+~!Manufacturer_Name (Everlight)
+~!Manufacturer_Part_Number (16-213SYGC/S530-E3/TR8)
+~!Mouser Part Number (638-16213SYGCS530E3)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Everlight/16-213SYGC-S530-E3-TR8?qs=8PzhAHr7IdOS46ES2mwkYQ%3D%3D)
+~!Arrow Part Number (16-213SYGC/S530-E3/TR8)
+~!Link Arrow Price/Stock (https://www.arrow.com/en/products/16-213sygcs530-e3tr8/everlight-electronics)
+~!Link Datasheet (https://datasheet.datasheetarchive.com/originals/dk/DKDS-1/16743.pdf)
+~!Height (0.55mm)
+"16-213SYGC_S530-E3_TR8"
+1.1!U 2.1!U 

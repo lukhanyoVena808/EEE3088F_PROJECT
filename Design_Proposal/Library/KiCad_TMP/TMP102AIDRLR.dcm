@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP TMP102AIDRLR
+D 1.4V-Capable Temperature Sensor with I2C/SMBus Interface and Alert Function in SOT-563
+K
+F http://www.ti.com/lit/gpn/tmp102
+$ENDCMP
+#
+#End Doc Library
