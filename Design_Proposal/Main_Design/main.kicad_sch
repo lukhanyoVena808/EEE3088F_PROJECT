@@ -2496,14 +2496,14 @@
     )
   )
 
-  (sheet (at 28.575 29.21) (size 37.465 28.575) (fields_autoplaced)
+  (sheet (at 29.845 29.21) (size 37.465 28.575) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa)
-    (property "Sheet name" "Power" (id 0) (at 28.575 28.4984 0)
+    (property "Sheet name" "Power" (id 0) (at 29.845 28.4984 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "power.kicad_sch" (id 1) (at 28.575 58.3696 0)
+    (property "Sheet file" "power.kicad_sch" (id 1) (at 29.845 58.3696 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
@@ -2682,7 +2682,7 @@
       (reference "D2") (unit 1) (value "RED") (footprint "LED_:LEDC1005X55N")
     )
     (path "/59b42903-2dc7-4011-ab5b-d7b81bd233c3/91b1f25b-dcb3-47ed-8828-3984e3f95572"
-      (reference "D3") (unit 1) (value "GREEN") (footprint "LED_:LEDC1005X55N")
+      (reference "D3") (unit 1) (value "RED") (footprint "LED_:LEDC1005X55N")
     )
     (path "/59b42903-2dc7-4011-ab5b-d7b81bd233c3/0607a974-1f7e-427f-9a87-182944959eab"
       (reference "D4") (unit 1) (value "RED") (footprint "LED_:LEDC1005X55N")
@@ -2709,7 +2709,7 @@
       (reference "J5") (unit 1) (value "Conn_01x33_Female") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x33_P2.54mm_Vertical")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/39125f99-6caa-4e69-9ae5-ca3bd6e3a49c"
-      (reference "J6") (unit 1) (value "USB_B_Micro") (footprint "")
+      (reference "J6") (unit 1) (value "USB_B_Micro") (footprint "Connector_USB:USB_Micro-B_GCT_USB3076-30-A")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/5b88f865-b1bf-4f4c-b514-21a095fc69fb"
       (reference "J7") (unit 1) (value "TP4056") (footprint "TP4056:SOIC127P600X175-9N")
@@ -2720,17 +2720,14 @@
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/abdb450d-0bc8-46e9-b270-7a86a3bcd253"
       (reference "J9") (unit 1) (value "Conn_01x02_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
-    (path "/cf6c12a4-3d95-473d-bafe-8be3892a84e9/d54417e2-94fc-493e-ad4d-f9d40ff34ff3"
-      (reference "J10") (unit 1) (value "Conn_01x03_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
+    (path "/59b42903-2dc7-4011-ab5b-d7b81bd233c3/552e5b91-0f6d-4e5e-8efe-ed5a448c306b"
+      (reference "J12") (unit 1) (value "Conn_01x02_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
-    (path "/cf6c12a4-3d95-473d-bafe-8be3892a84e9/c4fc06e0-ba11-463d-a1e8-4c60d86fda87"
-      (reference "J11") (unit 1) (value "Conn_01x05_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical")
+    (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/ec33585b-877f-4118-ae3a-7c6f1f5ecb59"
+      (reference "J14") (unit 1) (value "Conn_01x02_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
-    (path "/59b42903-2dc7-4011-ab5b-d7b81bd233c3/8ff64f38-a2e3-4bbb-baed-409c7b708a82"
-      (reference "J12") (unit 1) (value "Conn_01x06_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
-    )
-    (path "/59b42903-2dc7-4011-ab5b-d7b81bd233c3/a53e0776-e5b6-4c20-b49f-b16b81bee5b6"
-      (reference "J13") (unit 1) (value "Conn_01x04_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+    (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/16974a66-63ee-4d75-91d2-5bffd655f5b6"
+      (reference "J15") (unit 1) (value "Conn_01x02_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/c61227ad-7e5c-47d6-b269-39d32e2c5b89"
       (reference "Q1") (unit 1) (value "FS8205A") (footprint "FS82:SOP65P640X120-8N")
@@ -2804,8 +2801,8 @@
     (path "/59b42903-2dc7-4011-ab5b-d7b81bd233c3/0ddeaf1f-bd1e-4d61-8eb8-d94c9b5e4ee7"
       (reference "TP11") (unit 1) (value "SDA2") (footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
     )
-    (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/d1a87309-7ed7-463d-82ac-113232561416"
-      (reference "U1") (unit 1) (value "AMS1117-3.3") (footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
+    (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/3cbaf087-00a9-44ba-9009-69de62b3bab5"
+      (reference "U1") (unit 1) (value "HT7533-1") (footprint "Package_TO_SOT_SMD:SOT-89-3")
     )
     (path "/d15c8919-7ccc-44b2-8fc4-b04c1b47b6fa/066b7f68-bd1d-420d-abbb-142d6be69cdb"
       (reference "U2") (unit 1) (value "1024") (footprint "BT:1024")
