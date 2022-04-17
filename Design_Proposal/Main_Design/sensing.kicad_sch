@@ -570,7 +570,6 @@
     )
   )
 
-
   (junction (at 64.77 54.61) (diameter 0) (color 0 0 0 0)
     (uuid 03a67d9a-306b-49a8-b559-6676a7c08478)
   )
@@ -991,7 +990,7 @@
     (uuid 34e75633-dccc-4a68-894c-2b26d074ad42)
     (property "Reference" "IC2" (id 0) (at 68.58 128.905 0))
     (property "Value" "LM75AD,118" (id 1) (at 68.58 131.445 0))
-    (property "Footprint" "SOIC127P600X175-8N" (id 2) (at 77.47 134.62 0)
+    (property "Footprint" "LM75:SOIC127P600X175-8N" (id 2) (at 77.47 134.62 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
     (property "Datasheet" "http://www.nxp.com/docs/en/data-sheet/LM75A.pdf" (id 3) (at 77.47 137.16 0)
