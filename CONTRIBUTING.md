@@ -19,5 +19,5 @@ Use KiCAD v6.0 to make changes to the PCB design and STM32 Cube IDE to make chan
 Include notes on changes you made in BOTH the commit message and within code(comments) and PCB schematics(comments)
 push back to git on terminal or drop file on GitHub
 
-##HOW TO REPORT ISSUES
+## HOW TO REPORT ISSUES
 report any problems with code or Hardware design by rasing an issue on GitHub 
