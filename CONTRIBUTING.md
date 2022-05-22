@@ -26,4 +26,4 @@ Include notes on changes you made in BOTH the commit message and within code(com
 Push back to git on terminal or drop file on GitHub
 
 ## HOW TO REPORT ISSUES
-report any problems with code or Hardware design by rasing an issue on GitHub, alternatively email the 3 main contributors
+Report any problems with code or Hardware design by rasing an issue on GitHub, alternatively email the 3 main contributors
