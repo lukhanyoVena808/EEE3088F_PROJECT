@@ -15,15 +15,15 @@ Be welcoming to newcomers and encourage diverse new contributors from all backgr
 Be respectful to all contributors.
 
 ## HOW TO CONTRIBUTE
-If interested in contributing to project submit a pull request to any of the main 3 contributors and they will respond at thier convenience.
+- If interested in contributing to project submit a pull request to any of the main 3 contributors and they will respond at thier convenience.
 
-Once accepted clone the repo to your own PC and make your changes/improvements
+- Once accepted clone the repo to your own PC and make your changes/improvements
 
-Use KiCAD v6.0 to make changes to the PCB design and STM32 Cube IDE to make changes to the code
+- Use KiCAD v6.0 to make changes to the PCB design and STM32 Cube IDE to make changes to the code
 
-Include notes on changes you made in BOTH the commit message and within code(comments) and PCB schematics(comments)
+- Include notes on changes you made in BOTH the commit message and within code(comments) and PCB schematics(comments)
 
-Push back to git on terminal or drop file on GitHub
+- Push back to git on terminal or drop file on GitHub
 
 ## HOW TO REPORT ISSUES
-Report any problems with code or Hardware design by rasing an issue on GitHub, alternatively email the 3 main contributors
+- Report any problems with code or Hardware design by rasing an issue on GitHub, alternatively email any of the 3 main contributors
