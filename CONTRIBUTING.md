@@ -7,12 +7,12 @@ The contributions that we are looking for include: updating the documentation, w
 
 The contributions we're not looking for include: Any contributions outside the scope of the project i.e. Not related to sensors
 
-##Ground rules
+## Ground rules
 Create issues for any major changes and enhancements that you wish to make. Discuss things transparently and get community feedback.
 Be welcoming to newcomers and encourage diverse new contributors from all backgrounds.
 Be respectful to all contributors.
 
-##HOW TO CONTRIBUTE
+## HOW TO CONTRIBUTE
 If interested in contributing to project submit a pull request to any of the main 3 contributors and they will respond at thier convenience.
 Once accepted clone the repo to your own PC and make your changes/improvements
 Use KiCAD v6.0 to make changes to the PCB design and STM32 Cube IDE to make changes to the code
