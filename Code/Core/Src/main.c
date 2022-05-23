@@ -1,20 +1,20 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2022 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2022 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -28,11 +28,12 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#define DELAY 250
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define DELAY 250
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -44,7 +45,6 @@
  ADC_HandleTypeDef hadc;
 
 I2C_HandleTypeDef hi2c1;
-I2C_HandleTypeDef hi2c2;
 
 UART_HandleTypeDef huart2;
 
@@ -56,11 +56,11 @@ UART_HandleTypeDef huart2;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_ADC_Init(void);
-static void MX_I2C2_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_I2C1_Init(void);
+static void MX_ADC_Init(void);
 /* USER CODE BEGIN PFP */
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -97,15 +97,13 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_ADC_Init();
-  MX_I2C2_Init();
   MX_USART2_UART_Init();
   MX_I2C1_Init();
+  MX_ADC_Init();
   /* USER CODE BEGIN 2 */
 	char str[60] = { 0 }; //Useful buffer for printing to UART
 	uint8_t I2CReturn = 0; //Status var to indicate if HAL_I2C operation has succeeded (1) or failed (0);
@@ -127,28 +125,76 @@ int main(void)
 	//Say hello over UART
 	debugPrintln(&huart2, "Hello, this is STMF0 Discovery board: ");
 
-  while (1)
-  {
-	  //Print and increment a loop counter for visual tracking/debugging purposes only
-	  		memset(str, 0, sizeof(str));	//Reset str to zeros
-	  		sprintf(str, "\rLoop count %d\n", Loop);//Format string to include the loop counter variable
-	  		debugPrintln(&huart2, str);
-	  		Loop = Loop + 1;
+	while (1) {
 
+		//Print and increment a loop counter for visual tracking/debugging purposes only
+		memset(str, 0, sizeof(str));	//Reset str to zeros
+		sprintf(str, "\rLoop count %d\n", Loop);//Format string to include the loop counter variable
+		debugPrintln(&huart2, str);
+		Loop = Loop + 1;
 
-	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_8);  HAL_Delay(500);
-	  int analog_value;
-	  HAL_ADC_Start(&hadc);
-	  	 	  if (HAL_ADC_PollForConversion(&hadc, 10) == HAL_OK){
-	  	 		  analog_value = HAL_ADC_GetValue(&hadc);
-	  	 	  }
-	  	 	  HAL_ADC_Stop(&hadc);
-	  	 	  HAL_Delay(50);
-	  	 	debugPrintln("The LDR value is: %d",analog_value);
+		//Write and read back 5 different values to 5 different memory locations
+		for (i = 0; i < 5; i++) {
+			//WRITING
+			memset(str, 0, sizeof(str));
+			sprintf(str, "Writing 0x%X to EEPROM address 0x%X", Data, madd);
+			debugPrintln(&huart2, str);
+
+			I2CReturn = HAL_I2C_Mem_Write(GPIO_PIN_5, EEPROM_DEVICE_ADDR, madd, 2,
+					sData, 1, HAL_MAX_DELAY);
+			if (I2CReturn != HAL_OK) {
+				debugPrintln(&huart2, "Write to address FAILED");
+			}
+
+			//READING
+			memset(str, 0, sizeof(str));
+			sprintf(str, "Reading from EEPROM address 0x%X ", madd);
+			debugPrintln(&huart2, str);
+
+			I2CReturn = HAL_I2C_Mem_Read(&hi2c1, EEPROM_DEVICE_ADDR, madd, 2,
+					rData, 1, HAL_MAX_DELAY);
+			if (I2CReturn != HAL_OK) {
+				debugPrintln(&huart2, "Read from address FAILED");
+			}
+
+			//PRINT READ VALUE
+			memset(str, 0, sizeof(str));
+			sprintf(str, "Received data: 0x%X \n", Result);
+			debugPrintln(&huart2, str);
+
+			//Increment address and data values and clear Result holder
+			madd = madd + 1;
+			Data = Data + 1;
+			Result = 0x00;
+			HAL_Delay(1000);  //Pause
+		}
+
+		//Read back last 5 values again:
+		madd = madd - 5;
+		for (j = 0; j < 5; j++) {
+
+			I2CReturn = HAL_I2C_Mem_Read(&hi2c1, EEPROM_DEVICE_ADDR, madd, 2,
+					rData, 1, HAL_MAX_DELAY);
+			if (I2CReturn != HAL_OK) {
+				debugPrintln(&huart2, "Read from address FAILED");
+			}
+
+			//PRINT READ VALUE
+			memset(str, 0, sizeof(str));
+			sprintf(str, "Address 0x%X contains: 0x%X ", madd, Result);
+			debugPrintln(&huart2, str);
+
+			madd = madd + 1;
+		}
+		debugPrintln(&huart2, "-------------");
+
+		//Flash Blue LED
+		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_8);
+		HAL_Delay(DELAY);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  }
+	}
   /* USER CODE END 3 */
 }
 
@@ -170,10 +216,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.HSI14State = RCC_HSI14_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.HSI14CalibrationValue = 16;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL12;
-  RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV1;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -183,11 +226,11 @@ void SystemClock_Config(void)
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
   {
     Error_Handler();
   }
@@ -302,54 +345,6 @@ static void MX_I2C1_Init(void)
 }
 
 /**
-  * @brief I2C2 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_I2C2_Init(void)
-{
-
-  /* USER CODE BEGIN I2C2_Init 0 */
-
-  /* USER CODE END I2C2_Init 0 */
-
-  /* USER CODE BEGIN I2C2_Init 1 */
-
-  /* USER CODE END I2C2_Init 1 */
-  hi2c2.Instance = I2C2;
-  hi2c2.Init.Timing = 0x20303E5D;
-  hi2c2.Init.OwnAddress1 = 0;
-  hi2c2.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
-  hi2c2.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
-  hi2c2.Init.OwnAddress2 = 0;
-  hi2c2.Init.OwnAddress2Masks = I2C_OA2_NOMASK;
-  hi2c2.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
-  hi2c2.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
-  if (HAL_I2C_Init(&hi2c2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  /** Configure Analogue filter
-  */
-  if (HAL_I2CEx_ConfigAnalogFilter(&hi2c2, I2C_ANALOGFILTER_ENABLE) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  /** Configure Digital filter
-  */
-  if (HAL_I2CEx_ConfigDigitalFilter(&hi2c2, 0) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN I2C2_Init 2 */
-
-  /* USER CODE END I2C2_Init 2 */
-
-}
-
-/**
   * @brief USART2 Initialization Function
   * @param None
   * @retval None
@@ -399,16 +394,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, LD4_Pin|LD3_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : B1_Pin */
-  GPIO_InitStruct.Pin = B1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_EVT_RISING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : LD4_Pin LD3_Pin */
-  GPIO_InitStruct.Pin = LD4_Pin|LD3_Pin;
+  /*Configure GPIO pin : PC8 */
+  GPIO_InitStruct.Pin = GPIO_PIN_8;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -433,11 +422,10 @@ static void MX_GPIO_Init(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-  __disable_irq();
-  while (1)
-  {
-  }
+	/* User can add his own implementation to report the HAL error return state */
+	__disable_irq();
+	while (1) {
+	}
   /* USER CODE END Error_Handler_Debug */
 }
 
